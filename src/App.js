@@ -8,6 +8,7 @@ import { useState } from 'react';
 import InputBoxValue from './InputBoxValue/InputBoxValue';
 import Forms from './Forms/Forms';
 import ConditionalRenderingIfCondition from './ConditionalRendreingIfCondition/ConditionalRenderingIfCondition';
+import BasicFormValidation from './BasicFormValidation/BasicFormValidation';
 
 function App() {
   let myNAme= "Himanshu Ji";
@@ -67,6 +68,9 @@ function App() {
     {/* Forms */}
     <Forms/>
     <ConditionalRenderingIfCondition/>
+
+    {/* Basic Form Validation */}
+    <BasicFormValidation/>
     </div>
   );
 }
