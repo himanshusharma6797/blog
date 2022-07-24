@@ -9,6 +9,8 @@ import InputBoxValue from './InputBoxValue/InputBoxValue';
 import Forms from './Forms/Forms';
 import ConditionalRenderingIfCondition from './ConditionalRendreingIfCondition/ConditionalRenderingIfCondition';
 import BasicFormValidation from './BasicFormValidation/BasicFormValidation';
+import PassFunctionAsProps from './PassFunctionAsProps/PassFunctionAsProps';
+import PassFunctionAsPropsComponentTwo from './PassFunctionAsProps/PassFunctionAsPropsComponentTwo';
 
 function App() {
   let myNAme= "Himanshu Ji";
@@ -26,6 +28,11 @@ function App() {
   // Hide, Show, and Toggle
   const[toggle, setToggle]=useState(false);
   const[btnTxt, setBtnTxt]=useState("Show Heading");
+
+  // pass function as props
+  function dataHandler(){
+    alert("chalgo function as props");
+  }
 
   return (
     <div>
@@ -71,6 +78,12 @@ function App() {
 
     {/* Basic Form Validation */}
     <BasicFormValidation/>
+
+    {/* pass function as props */}
+    <div>
+    <PassFunctionAsProps functionAsProps={dataHandler}/>
+    <PassFunctionAsPropsComponentTwo functionAsProps={dataHandler}/>
+    </div>
     </div>
   );
 }
