@@ -6,12 +6,14 @@ class ClassComponets extends React.Component{
     // const r =3
     // console.log();
     // we can not declare variable and console inside class component directly 
+    // when we call the component then the first thing is called is Constructor
     constructor(){
         super();
         // super is functionality that is used by Javascript 
         // when ever we extend the class then the parent constructor should be called
         // super is for using this keyword
         this.state={
+            // Never call the API in state use CompnentDidMount() for it
             data:'Himanshu Babu',
             name:"Anil"
         }

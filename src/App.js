@@ -4,13 +4,15 @@ import ClassComponents from './ClassComponents/ClassComponents'
 import {ComponentWithoutJSX} from './ComponentWithoutJSX/ComponentWithoutJSX.js'
 import UseState from './UseState/UseState';
 import PropsInFC from './PropsInFC/PropsInFC';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import InputBoxValue from './InputBoxValue/InputBoxValue';
 import Forms from './Forms/Forms';
 import ConditionalRenderingIfCondition from './ConditionalRendreingIfCondition/ConditionalRenderingIfCondition';
 import BasicFormValidation from './BasicFormValidation/BasicFormValidation';
 import PassFunctionAsProps from './PassFunctionAsProps/PassFunctionAsProps';
 import PassFunctionAsPropsComponentTwo from './PassFunctionAsProps/PassFunctionAsPropsComponentTwo';
+import RenderMethod from './RenderMethod/RenderMethod';
+import ComponentDidMount from './LCMInReact/ComponentDidMount';
 
 function App() {
   let myNAme= "Himanshu Ji";
@@ -33,6 +35,9 @@ function App() {
   function dataHandler(){
     alert("chalgo function as props");
   }
+
+  // For Render function
+  const [propName, setPropName] = React.useState("Him")
 
   return (
     <div>
@@ -84,6 +89,13 @@ function App() {
     <PassFunctionAsProps functionAsProps={dataHandler}/>
     <PassFunctionAsPropsComponentTwo functionAsProps={dataHandler}/>
     </div>
+
+    {/* Render method */}
+    <RenderMethod name={propName}/>
+    <button onClick={()=>setPropName("King")}>Update Name</button>
+
+    {/* LCM in React */}
+    <ComponentDidMount/>
     </div>
   );
 }
