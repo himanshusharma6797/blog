@@ -1,9 +1,14 @@
 import { useState } from "react"
+import React from "react";
+
+// the useState is a hook 
+// for using LCM in functional components we using hooks
+// by hooks we using CC features in FC such as state, LC, Pure component, etc 
 
 
 export default function UseState(){
     // hooks in useState and we need to import useState from react
-    const [data, setData]=useState("By Default")
+    const [data, setData]=useState("By Default")    // this is called destructuring
     // state manage by useState
     const [number, setNumber]=useState(0);
     // const agfs = 0;

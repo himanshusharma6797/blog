@@ -12,7 +12,18 @@ import BasicFormValidation from './BasicFormValidation/BasicFormValidation';
 import PassFunctionAsProps from './PassFunctionAsProps/PassFunctionAsProps';
 import PassFunctionAsPropsComponentTwo from './PassFunctionAsProps/PassFunctionAsPropsComponentTwo';
 import RenderMethod from './RenderMethod/RenderMethod';
-import ComponentDidMount from './LCMInReact/ComponentDidMount';
+import ComponentDidMount from './LCMInCC/ComponentDidMount';
+import ComponentDidUpdate from './LCMInCC/ComponentDidUpdate';
+import ShouldComponentUpdate from './LCMInCC/ShouldComponentUpdate';
+import ComponentWillUnmountParentCompo from './LCMInCC/ComponentWillUnmountParentCompo';
+import UseEffect from './LCMInFC/UseEffect';
+import './style.css';
+import style from './style.module.css'
+// use react-bootstrap
+import Button from 'react-bootstrap/Button';
+// or
+// import {Button} from 'react-bootstrap';
+
 
 function App() {
   let myNAme= "Himanshu Ji";
@@ -38,6 +49,10 @@ function App() {
 
   // For Render function
   const [propName, setPropName] = React.useState("Him")
+
+  // For useEffect in the props
+  const[data, setData]=useState(69);
+  const[count, setCount]=useState(101);
 
   return (
     <div>
@@ -94,8 +109,35 @@ function App() {
     <RenderMethod name={propName}/>
     <button onClick={()=>setPropName("King")}>Update Name</button>
 
-    {/* LCM in React */}
+    {/* LCM in CC */}
     <ComponentDidMount/>
+    <ComponentDidUpdate/>
+    <ShouldComponentUpdate/>
+    <ComponentWillUnmountParentCompo/>
+
+    {/* LCM i FC */}
+    <UseEffect datta={data} counttter ={count}/>
+    <button onClick={()=>setData(data+1)}>Update Data</button>
+    <button onClick={()=>setCount(count+1)}>Update Count</button>
+
+    {/* three types of style 
+    1. External 
+    2. Inline or the Variable
+    3. CSS with module
+    */}
+    <h1 className='external'>Style in React way 1</h1>
+    <h1 style={{backgroundColor:'black',color:'pink'}}>Style in React way 2</h1>
+    <h1 className={style.success}>Style in React way 3</h1>
+
+    {/* react bootstrap */}
+    <Button variant="outline-primary">Primary</Button>{' '}
+      <Button variant="outline-secondary">Secondary</Button>{' '}
+      <Button variant="outline-success">Success</Button>{' '}
+      <Button variant="outline-warning">Warning</Button>{' '}
+      <Button variant="outline-danger">Danger</Button>{' '}
+      <Button variant="outline-info">Info</Button>{' '}
+      <Button variant="outline-light">Light</Button>{' '}
+      <Button variant="outline-dark">Dark</Button>
     </div>
   );
 }
