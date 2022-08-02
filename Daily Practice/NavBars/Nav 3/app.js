@@ -1,0 +1,1 @@
+document.getElementById('add_text').innerHTML = "Added text in the paragraph block";

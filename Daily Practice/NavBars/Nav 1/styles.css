@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+/* we can also import font what we want */
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    background-color: #24252A;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px 5%;
+    align-items: center;
+}
+li, a, button{
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+}
+.logo{
+    cursor: pointer;
+    margin-right: auto;
+}
+.nav_links{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.nav_link a{
+    transition: all .3s ease 0s;
+}
+.nav_link a:hover{
+    color: #0088a9;
+}
+.nav_link{
+    padding: 0px 15px;
+}
+.contactButton{
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    transition: all 0.3s ease 0s;
+    padding: 9px 25px;
+    margin-left: 20px;
+}
+.contactButton:hover{
+    background-color: rgba(0, 136, 169, 0.8);
+}

@@ -1,0 +1,74 @@
+/* div{
+    background-color: aqua;
+    width: 400px;
+    padding: 10px;
+    border: 1px solid black;
+    margin: 20px;
+} */
+
+/* p{
+    color: red;
+    font-size: xx-large;
+    background-color: black;
+    margin: 10px 65px 15px 13px;
+
+} */
+
+/* [data-result="win"]{
+    background-color: green;
+} */
+
+/* @media(max-width:400px){
+    p{
+        color: blue;
+    }
+}
+@media(min-width:800px){
+    p{
+        color: green;
+    }
+}
+@media(min-width:200)and (max-width:600){
+    p{
+        color: black;
+    }
+} */
+/* body{
+    font-size: 24px;
+    
+} */
+/* p{
+    font-size: 50%;
+    background-color: green;
+} */
+/* span{
+    font-size: 1.5em;
+} */
+
+/* p{
+    height: 10px !important;
+} */
+p{
+    height: 20px;
+}
+
+/* .first{
+    margin: 10px 0px;
+} */
+
+/* .second{
+    margin: 20px 0px ;
+} */
+
+span.text{
+    color: red;
+}
+.text span{
+    color: blue;
+}
+div {
+    color: green;
+}
+p span{
+    color: yellow;
+}
