@@ -73,9 +73,9 @@ function App() {
 
     <Users/>
     {/* we can also write and call component like this <ClassComponets></ClassComponets> */}
-    <ClassComponents names="Anil bhai" email="anilua@test.com"></ClassComponents>
+    <ClassComponents names="Anil bhai" email="anilua@test.com"><h1>Isse HTML use karinge hum component k beech mai sai by the help of "this.props.children" as a prop pass hoga ye hai Class Component</h1></ClassComponents>
     <ComponentWithoutJSX/>
-    <UseState/>
+    <UseState>Isse HTML use karinge hum component k beech mai sai by the help of "this.children" as a prop pass hoga ye hai Functional Component</UseState>
     {/* if we want to pass multiple data  */}
     <PropsInFC name="Baap" email="baap@baap.com" otherData={{address:"kailash", phone:"0"}}/>
     <PropsInFC name={"Beta"} email="beta@baap.com" otherData={{address:"mansarover", phone:"10"}}/>

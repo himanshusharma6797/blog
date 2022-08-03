@@ -4,6 +4,8 @@ export default function UseEffect(props) {
     const [count, setCount]=useState(0);
     const [countTwo, setCountTwo]=useState(0);
     const [countThree, setCountThree]=useState(0);
+    const [countFour, setCountFour]=useState(0);
+    const [countFive, setCountFive]=useState(0);
     // If you’re familiar with React class lifecycle methods, you can think of useEffect Hook as componentDidMount, componentDidUpdate, and componentWillUnmount combined.
     useEffect(()=>{
         console.log("useEffect count one");
@@ -15,8 +17,11 @@ export default function UseEffect(props) {
     useEffect(()=>{
         console.log("useEffect count three");
     },[countThree])
-    // this will update inly for the state name which we are used in the array
+    // this will update only for the state name which we are used in the array
     // and we can use more then one useState 
+
+    // function that call useEffect inside it
+    // const 
 
     useEffect(()=>{
         console.log("useEffect props counter");

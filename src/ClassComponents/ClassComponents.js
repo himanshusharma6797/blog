@@ -31,6 +31,9 @@ class ClassComponets extends React.Component{
         console.log(this.state);
     }
     // render function is importent in class based components
+    // render(){   
+    //     return <h1>render chal gaya</h1>
+    // }
     render()
     {
         // console.log(this.props);
@@ -42,6 +45,9 @@ class ClassComponets extends React.Component{
 
         <PropsInCC name={this.state.name} email="bbc@gmail.com"/>
         <button onClick={()=>this.callName()}>Anil to Sidhu</button>
+
+        {/* using Isse HTML use karinge hum component k beech mai sai by the help of "this.children" as a prop pass hoga ye hai Functional Component  */}
+        {/* <h1>{this.props.children}</h1> */}
         </>)
 
     }

@@ -15,7 +15,7 @@ export default function UseState(){
     function onClicking(){
         setData("Change after clicking by useState");
     }
-    const onClickingNumber=()=>{
+    const onClickingNumber=(props)=>{
         setNumber(number + 1);
     }
     

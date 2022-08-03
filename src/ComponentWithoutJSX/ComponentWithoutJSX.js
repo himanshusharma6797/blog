@@ -1,4 +1,6 @@
 import React from 'react'
+// import {createElement} from 'react'
+// we can use createElement directly without attached React if we import that like this {createElement}
 
 export function ComponentWithoutJSX(){
     // return React.createElement('div',null,React.createElement('h1','class','Component Without JSX'));

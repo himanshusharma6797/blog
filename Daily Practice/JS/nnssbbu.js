@@ -21,3 +21,6 @@ const obja = {
 }
 
 console.log(obja.hi);
+
+// ascape sequence character "\"
+console.log('my name is him\'s sharma');
