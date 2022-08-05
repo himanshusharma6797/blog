@@ -4,8 +4,8 @@ export default function UseEffect(props) {
     const [count, setCount]=useState(0);
     const [countTwo, setCountTwo]=useState(0);
     const [countThree, setCountThree]=useState(0);
-    const [countFour, setCountFour]=useState(0);
-    const [countFive, setCountFive]=useState(0);
+    // const [countFour, setCountFour]=useState(0);
+    // const [countFive, setCountFive]=useState(0);
     // If you’re familiar with React class lifecycle methods, you can think of useEffect Hook as componentDidMount, componentDidUpdate, and componentWillUnmount combined.
     useEffect(()=>{
         console.log("useEffect count one");
@@ -20,8 +20,19 @@ export default function UseEffect(props) {
     // this will update only for the state name which we are used in the array
     // and we can use more then one useState 
 
-    // function that call useEffect inside it
-    // const 
+    // function that call useEffect inside it we can not do that due to react-hooks/rules-of-hooks
+    // const functionCallUseEffect=()=>{
+    //     useEffect(()=>{
+    //         console.log("useEffect inside the Function");
+    //     })
+    // }
+    // calling useState inside a function we can not do that due to react-hooks/rules-of-hooks
+    // useEffect(()=>{
+    //     const useEffectCallFunction=()=>{
+    //         console.log("Function inside the useEffect");
+    //     }
+    //     useEffectCallFunction();
+    // })
 
     useEffect(()=>{
         console.log("useEffect props counter");
@@ -32,6 +43,8 @@ export default function UseEffect(props) {
 
   return (
     <div>
+    {/* <button onClick={()=>functionCallUseEffect()}>Function Call useEffect</button> */}
+
         useEffect for state {count}
     <button onClick={()=>setCount(count+1)}>Counter Update</button>
         useEffect for state {countTwo}

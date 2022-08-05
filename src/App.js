@@ -21,6 +21,8 @@ import './style.css';
 import style from './style.module.css'
 // use react-bootstrap
 import Button from 'react-bootstrap/Button';
+import ArrayListingWithMap from './ArrayListingWithMap/ArrayListingWithMap';
+import NestedListWithNestedArray from './NestedList/NestedListWithNestedArray';
 // or
 // import {Button} from 'react-bootstrap';
 
@@ -138,6 +140,10 @@ function App() {
       <Button variant="outline-info">Info</Button>{' '}
       <Button variant="outline-light">Light</Button>{' '}
       <Button variant="outline-dark">Dark</Button>
+
+      {/* Handle Array with list */}
+      <ArrayListingWithMap></ArrayListingWithMap>
+      <NestedListWithNestedArray></NestedListWithNestedArray>
     </div>
   );
 }
