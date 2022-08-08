@@ -23,9 +23,31 @@ import style from './style.module.css'
 import Button from 'react-bootstrap/Button';
 import ArrayListingWithMap from './ArrayListingWithMap/ArrayListingWithMap';
 import NestedListWithNestedArray from './NestedList/NestedListWithNestedArray';
+import ReuseComponent from './ReuseComponent/ReuseComponent';
+import ReactFragment from './ReactFragment/ReactFragment';
+import LiftingStateUp from './LiftingStateUp/LiftingStateUp';
+import PureComponentInState from './PureComponent/PureComponentInState';
+import UseMemo from './UseMemo/UseMemo';
 // or
 // import {Button} from 'react-bootstrap';
 
+// array for resusing component
+const musicians = [
+  { name: 'him', company: 'BLM',address:'MTR' }, { name: 'nish', company: 'BLM',address:'MTR' }, { name: 'kan', company: 'BLM',address:'MTR' }, { name: 'par', company: 'BLM',address:'MTR' }, { name: 'sid', company: 'BLM',address:'MTR' }, { name: 'hem', company: 'HB',address:'MTR' }];
+// alert function for passing as props
+function alertCall(){
+  alert("calling the reuse component")
+}
+
+// lifting state up means transfer data from child to parent component
+function liftingStateUp(data){
+  console.log(data);
+  console.log(data.name);
+  // alert(data.name);
+  // return <h1>Name: {data.name}</h1>
+    // <h2>Age: {data.age}</h2>
+    // <h3>Gnder: {data.gender}</h3>
+}
 
 function App() {
   let myNAme= "Himanshu Ji";
@@ -144,6 +166,23 @@ function App() {
       {/* Handle Array with list */}
       <ArrayListingWithMap></ArrayListingWithMap>
       <NestedListWithNestedArray></NestedListWithNestedArray>
+
+      {/* Reuse Component */}
+      {musicians.map((iteratingElement, forIndexing)=>
+        <ReuseComponent data={iteratingElement} alerting={alertCall} key={forIndexing+1}/>
+      )}
+
+      {/* React Fragment */}
+      <ReactFragment/>
+
+      {/* lifting state up */}
+      <LiftingStateUp data={liftingStateUp} />
+
+      {/* Pure Component */}
+      <PureComponentInState/>
+
+      {/* useMemo */}
+      <UseMemo/>
     </div>
   );
 }
