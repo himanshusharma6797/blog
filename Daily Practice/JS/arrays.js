@@ -20,3 +20,8 @@ for (let index = 0; index < anArr.length; index++) {
     console.log(anArr[index]);
     
 }
+
+const newArr =['1','2','3','4','5','7'];
+// in const array we can still changes the element in Array
+newArr.push("8")
+console.log(newArr);

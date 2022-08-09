@@ -4,7 +4,7 @@ import ClassComponents from './ClassComponents/ClassComponents'
 import {ComponentWithoutJSX} from './ComponentWithoutJSX/ComponentWithoutJSX.js'
 import UseState from './UseState/UseState';
 import PropsInFC from './PropsInFC/PropsInFC';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import InputBoxValue from './InputBoxValue/InputBoxValue';
 import Forms from './Forms/Forms';
 import ConditionalRenderingIfCondition from './ConditionalRendreingIfCondition/ConditionalRenderingIfCondition';
@@ -28,56 +28,69 @@ import ReactFragment from './ReactFragment/ReactFragment';
 import LiftingStateUp from './LiftingStateUp/LiftingStateUp';
 import PureComponentInState from './PureComponent/PureComponentInState';
 import UseMemo from './UseMemo/UseMemo';
+import RefInCC from './RefInCC/RefInCC';
+import UseRefInFC from './UseRef/UseRefInFC';
+import FrowardRef from './ForwardRefInFC/FrowardRef';
 // or
 // import {Button} from 'react-bootstrap';
+
 
 // array for resusing component
 const musicians = [
   { name: 'him', company: 'BLM',address:'MTR' }, { name: 'nish', company: 'BLM',address:'MTR' }, { name: 'kan', company: 'BLM',address:'MTR' }, { name: 'par', company: 'BLM',address:'MTR' }, { name: 'sid', company: 'BLM',address:'MTR' }, { name: 'hem', company: 'HB',address:'MTR' }];
-// alert function for passing as props
-function alertCall(){
-  alert("calling the reuse component")
-}
-
-// lifting state up means transfer data from child to parent component
-function liftingStateUp(data){
-  console.log(data);
-  console.log(data.name);
-  // alert(data.name);
-  // return <h1>Name: {data.name}</h1>
+  // alert function for passing as props
+  function alertCall(){
+    alert("calling the reuse component")
+  }
+  
+  // lifting state up means transfer data from child to parent component
+  function liftingStateUp(data){
+    console.log(data);
+    console.log(data.name);
+    // alert(data.name);
+    // return <h1>Name: {data.name}</h1>
     // <h2>Age: {data.age}</h2>
     // <h3>Gnder: {data.gender}</h3>
-}
-
-function App() {
-  let myNAme= "Himanshu Ji";
-
-  // make a function and call it by onClick method
-  function clickingMethod(){
-    alert("On Click is working")
   }
+  
+  function App() {
+    let myNAme= "Himanshu Ji";
+    
+    // make a function and call it by onClick method
+    function clickingMethod(){
+      alert("On Click is working")
+    }
 
   const[name, setName]=useState("Himanshu JI")
   const onClickUpdateName=()=>{
     setName("Harshu Bhaiya JindaBaad")
   }
-
+  
   // Hide, Show, and Toggle
   const[toggle, setToggle]=useState(false);
   const[btnTxt, setBtnTxt]=useState("Show Heading");
-
+  
   // pass function as props
   function dataHandler(){
     alert("chalgo function as props");
   }
-
+  
   // For Render function
   const [propName, setPropName] = React.useState("Him")
-
+  
   // For useEffect in the props
   const[data, setData]=useState(69);
   const[count, setCount]=useState(101);
+  
+  // for using forwardRef
+  let myRef = useRef();
+  function manipulatingDOM(){
+    myRef.current.focus();
+    myRef.current.style.color = "White";
+    myRef.current.style.backgroundColor = "Black";
+  }
 
+  
   return (
     <div>
     <h1>
@@ -183,6 +196,16 @@ function App() {
 
       {/* useMemo */}
       <UseMemo/>
+
+      {/* Ref in CC */}
+      <RefInCC/>
+
+      {/* useRef in FC */}
+      <UseRefInFC/>
+
+      {/* forwardRef */}
+      <FrowardRef ref={myRef}/>
+      <button onClick={manipulatingDOM}>Change the DOM</button>
     </div>
   );
 }

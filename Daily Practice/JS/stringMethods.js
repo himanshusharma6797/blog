@@ -28,6 +28,6 @@ for (let i = 0; i < meraDost.length; i++) {
 
 // string is immutable
 meraDost[0] = "G" // we can not change string it is not possible
-console.log("Strin are Immutable",meraDost);
+console.log("String are Immutable",meraDost);
 // string will never changed when we use method in string it returns new string always 
 
