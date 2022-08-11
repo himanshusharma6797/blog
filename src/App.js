@@ -33,10 +33,13 @@ import UseRefInFC from './UseRef/UseRefInFC';
 import FrowardRef from './ForwardRefInFC/FrowardRef';
 import ControlledComponentInFC from './ControlledComponent/ControlledComponentInFC';
 import UncontrolledComponentInFC from './UncontrolledComponent/UncontrolledComponentInFC';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Home from './ReactRouterComp/Home';
 import About from './ReactRouterComp/About';
 import Navbar from './ReactRouterComp/Navbar';
+import ParamsUsers from './ReactRouterComp/ParamsUsers';
+import SearchParamsHookFilter from './ReactRouterComp/SearchParamsHookFilter';
+// import Page404 from './ReactRouterComp/Page404';
 // or
 // import {Button} from 'react-bootstrap';
 
@@ -105,8 +108,17 @@ function App() {
       <BrowserRouter>
         <Navbar/>
         <Routes>
+          <Route path='/' element={<Home />} />
           <Route path='/home' element={<Home />} />
           <Route path='/about' element={<About />} />
+          {/* <Route path='/*' element={<Page404/>}/> */}
+          {/* if we enter wrong url that does not matched with path of routes then we set path="/*" so it will open default when no path are matched or we can say enter wrong url */}
+          <Route path='/*' element={<Navigate to={"/"}/>}/>
+          {/* for directly re-direct page if we enter wrong url */}
+          <Route path='/user/:naam' element={<ParamsUsers />}/>
+          {/* for understanding for the router that it is the name of user */}
+          <Route path='/filter' element={<SearchParamsHookFilter />}/>
+
         </Routes>
       </BrowserRouter>
 

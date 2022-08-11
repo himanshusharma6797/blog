@@ -148,19 +148,152 @@
 // Clone an Array
 // The Code tab has a code which attempts to add a clone of an array to itself. There is no error message, but the results are not as expected. Can you fix the code?
 
-const clone = (arr) => {
-    let cloneArray = [...arr, [...arr]]
-    return console.log(cloneArray);
-}
+// const clone = (arr) => {
+//     let cloneArray = [...arr, [...arr]]
+//     return console.log(cloneArray);
+// }
 
 // Examples
-clone([1, 1]) 
+// clone([1, 1]) 
 // ➞ [1, 1, [1, 1]]
 
-clone([1, 2, 3]) 
+// clone([1, 2, 3]) 
 // ➞ [1, 2, 3, [1, 2, 3]]
 
-clone(["x", "y"]) 
+// clone(["x", "y"]) 
 // ➞ ["x", "y", ["x", "y"]]
 // Notes
 // N/A
+
+
+// 11 august
+// question 1
+// Burglary Series (04): Add its Name
+// Given three arguments ⁠— an object obj of the stolen items, the pets name and a value ⁠— return an object with that name and value in it (as key-value pairs).
+
+// function addName(obj,key,val){
+//     obj[key]=val
+//     console.log(obj);
+// }
+
+// Examples
+// addName({}, "Brutus", 300) 
+// ➞ { Brutus: 300 }
+
+// addName({ piano: 500 }, "Brutus", 400) 
+// ➞ { piano: 500, Brutus: 400 }
+
+// addName({ piano: 500, stereo: 300 }, "Caligula", 440) 
+// ➞ { piano: 500, stereo: 300, Caligula: 440 }
+// Notes
+// The value argument will be a number.
+
+// question 2
+// Find Number of Digits in Number
+// Create a function that will return an integer number corresponding to the amount of digits in the given integer num.
+
+// function num_of_digits(digits){
+//     let length = String(digits).split("").length
+//     console.log(length);
+// }
+
+// Examples
+// num_of_digits(1000) 
+// ➞ 4
+
+// num_of_digits(12) 
+// ➞ 2
+
+// num_of_digits(1305981031) 
+// ➞ 10
+
+// num_of_digits(0) 
+// ➞ 1
+// Notes
+// Try to solve this challenge without using strings!
+
+
+// question 3
+// Which Generation Are You?
+// Try finding your ancestors and offspring with code.
+
+// Create a function that takes a number x and a character y ("m" for male, "f" for female), and returns the name of an ancestor (m/f) or descendant (m/f).
+
+// If the number is negative, return the related ancestor.
+// If positive, return the related descendant.
+// You are generation 0. In the case of 0 (male or female), return "me!".
+// const gen = {
+// 	"-3": ["great grandfather",	"great grandmother"],
+// 	"-2": ["grandfather","grandmother"],
+// 	"-1":["father",	"mother"],
+// 	"0": ["me!", "me!"],
+// 	"1":["son",	"daughter"],
+// 	"2"	:["grandson","granddaughter"],
+// 	"3" :["great grandson","great granddaughter"]
+// }
+// function generation(x, y) {
+// 	return console.log(y=="m"?gen[x][0]:gen[x][1]);
+// }
+// Examples
+// generation(2, "f")
+// ➞ "granddaughter"
+
+// generation(-3, "m") 
+// ➞ "great grandfather"
+
+// generation(1, "f") 
+// ➞ "daughter"
+// Notes
+// Check the Resources tab for helpful hints.
+
+// Generation	Male	            Female
+// -3	        great grandfather	great grandmother
+// -2	        grandfather	        grandmother
+// -1	        father	            mother
+// 0	        me!	                me!
+// 1	        son	                daughter
+// 2	        grandson	        granddaughter
+// 3	        great grandson	    great granddaughter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Converting Objects to Arrays
+// Write a function that converts an object into an array, where each element represents a key-value pair in the form of an array.
+
+// function toArray(object){
+//     let anArry = [];
+//     for (const key in object) {
+//         if (Object.hasOwnProperty.call(object, key)) {
+//             const keys = object[key];
+//         }
+//     }
+// }
+// Examples
+toArray({ a: 1, b: 2 }) 
+// ➞ [["a", 1], ["b", 2]]
+
+toArray({ shrimp: 15, tots: 12 }) 
+// ➞ [["shrimp", 15], ["tots", 12]]
+
+toArray({}) 
+// ➞ []
+// Notes
+// Return an empty array if the object is empty.
