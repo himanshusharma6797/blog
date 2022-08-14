@@ -257,24 +257,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Converting Objects to Arrays
 // Write a function that converts an object into an array, where each element represents a key-value pair in the form of an array.
 
@@ -287,13 +269,45 @@
 //     }
 // }
 // Examples
-toArray({ a: 1, b: 2 }) 
+// toArray({ a: 1, b: 2 }) 
 // ➞ [["a", 1], ["b", 2]]
 
-toArray({ shrimp: 15, tots: 12 }) 
+// toArray({ shrimp: 15, tots: 12 }) 
 // ➞ [["shrimp", 15], ["tots", 12]]
 
-toArray({}) 
+// toArray({}) 
 // ➞ []
 // Notes
 // Return an empty array if the object is empty.
+
+
+
+// return unique values from the array
+let arry = [1, 1, 2, 1, 3, 3, 4, 3, 5];
+// console.log(arry);
+
+let uniqValues = [...new Set(arry)]
+// using spread because it will get the values in set object to converting it into the array
+console.log("Unique values from array",uniqValues);
+// new Set(array) is a Set containing all the values in array, which duplicates necessorily removed. Then the spread operator just converts this back into an array
+
+// return duplicate values from the array
+let arry2 = [1, 1, 2, 1, 3, 3, 1, 3, 4, 3, 2, 5];
+let findDuplicate = (array) => array.filter((item,index)=>array.indexOf(item) != index)
+console.log("duplicate elements",[...new Set(findDuplicate(arry2))]);
+// let ar = arry2.sort((a,b)=>{return a-b})
+// let array3 = []
+
+// for (let i = 0; i < ar.length; i++) {
+//         if (ar[i+1]===ar[i]){
+//             array3.push(ar[i])
+//         }
+// }
+// console.log("duplicate elements",array3);
+
+
+let strArray = [ "q", "w", "w", "w", "w", "e", "i", "w", "u", "r"];
+let findDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) != index)
+
+console.log(findDuplicates(strArray)) // All duplicates
+console.log([...new Set(findDuplicates(strArray))]) // Unique duplicates

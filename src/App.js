@@ -264,7 +264,7 @@ function HOFGreen(props) {
 function Counter() {
   const [count, setCount] = useState(0)
   return <div>
-    <h3>{count}</h3>
+    <h3>HOC{count}</h3>
     <button onClick={() => setCount(count + 1)}>Update Count</button>
   </div>
 }
