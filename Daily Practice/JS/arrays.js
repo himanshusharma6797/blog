@@ -66,17 +66,23 @@ let arraaa = [123,56,567,45,23,345,567,7,34436,56756,5,565,6,56,3]
 
 let newArrraaa = arraaa.filter((e)=>{
     return e < 100
-    // fi filter returning true then those value can insert in the new array
+    // if filter returning true then those value can insert in the new array
 })
 console.log(newArrraaa);
 
 // reduce method
-const newArr2 =[1,2,3,4,5,7];
-let returnReduce = newArr2.reduce((preVal,currVal,index,arrStrs)=>{
-    console.log("previous value",preVal);
-    console.log("current value",currVal);
-    console.log("Index",index);
-    console.log("array",arrStrs);
-    return preVal+currVal
-})
-console.log(returnReduce);
+// const newArr2 =[1,2,3,4,5,7];
+// let returnReduce = newArr2.reduce((preVal,currVal,index,arrStrs)=>{
+//     console.log("previous value",preVal);
+//     console.log("current value",currVal);
+//     console.log("Index",index);
+//     console.log("array",arrStrs);
+//     return preVal+currVal
+// })
+// console.log(returnReduce);
+
+// object inside an array
+let ar = [a={him:"king",brim:"chamundaye"},b={himmy:"kingy",brimy:"chamunday"}]
+console.log("object inside an array",ar[0].him);
+let arrrrrr = [{him:"king",brim:"chamundaye"},{himmy:"kingy",brimy:"chamunday"}]
+console.log("object inside an array 2",ar[0].him);

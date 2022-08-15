@@ -39,6 +39,10 @@ import About from './ReactRouterComp/About';
 import Navbar from './ReactRouterComp/Navbar';
 import ParamsUsers from './ReactRouterComp/ParamsUsers';
 import SearchParamsHookFilter from './ReactRouterComp/SearchParamsHookFilter';
+import Contact from './ReactRouterComp/Contact';
+import Company from './ReactRouterComp/AdditionalComponents/Company';
+import Channel from './ReactRouterComp/AdditionalComponents/Channel';
+import Other from './ReactRouterComp/AdditionalComponents/Other';
 // import Page404 from './ReactRouterComp/Page404';
 // or
 // import {Button} from 'react-bootstrap';
@@ -118,7 +122,13 @@ function App() {
           <Route path='/user/:naam' element={<ParamsUsers />}/>
           {/* for understanding for the router that it is the name of user */}
           <Route path='/filter' element={<SearchParamsHookFilter />}/>
-
+          <Route path='/contact/' element={<Contact/>}>
+            {/* don't define prallel routes for neasted routing define inside an route */}
+            <Route path='company' element={<Company/>}/>
+            <Route path='channel' element={<Channel/>}/>
+            <Route path='other' element={<Other/>}/>
+            {/* if we use slash inner routs then get this error =>Absolute route path "/other" nested under path "/contact/" is not valid. An absolute child route path must start with the combined path of all its parent routes. */}
+          </Route>
         </Routes>
       </BrowserRouter>
 

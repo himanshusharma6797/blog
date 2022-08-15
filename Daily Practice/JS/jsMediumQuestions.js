@@ -283,18 +283,18 @@
 
 
 // return unique values from the array
-let arry = [1, 1, 2, 1, 3, 3, 4, 3, 5];
+// let arry = [1, 1, 2, 1, 3, 3, 4, 3, 5];
 // console.log(arry);
 
-let uniqValues = [...new Set(arry)]
+// let uniqValues = [...new Set(arry)]
 // using spread because it will get the values in set object to converting it into the array
-console.log("Unique values from array",uniqValues);
+// console.log("Unique values from array",uniqValues);
 // new Set(array) is a Set containing all the values in array, which duplicates necessorily removed. Then the spread operator just converts this back into an array
 
 // return duplicate values from the array
-let arry2 = [1, 1, 2, 1, 3, 3, 1, 3, 4, 3, 2, 5];
-let findDuplicate = (array) => array.filter((item,index)=>array.indexOf(item) != index)
-console.log("duplicate elements",[...new Set(findDuplicate(arry2))]);
+// let arry2 = [1, 1, 2, 1, 3, 3, 1, 3, 4, 3, 2, 5];
+// let findDuplicate = (array) => array.filter((item,index)=>array.indexOf(item) != index)
+// console.log("duplicate elements",[...new Set(findDuplicate(arry2))]);
 // let ar = arry2.sort((a,b)=>{return a-b})
 // let array3 = []
 
@@ -306,8 +306,157 @@ console.log("duplicate elements",[...new Set(findDuplicate(arry2))]);
 // console.log("duplicate elements",array3);
 
 
-let strArray = [ "q", "w", "w", "w", "w", "e", "i", "w", "u", "r"];
-let findDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) != index)
+// let strArray = [ "q", "w", "w", "w", "w", "w", "e", "i", "u", "r"];
+// let findDuplicates = arr => arr.filter((item, index) => arr.indexOf(item) != index)
 
-console.log(findDuplicates(strArray)) // All duplicates
-console.log([...new Set(findDuplicates(strArray))]) // Unique duplicates
+// console.log(strArray.indexOf("w"));
+// console.log(findDuplicates(strArray)) // All duplicates
+// console.log([...new Set(findDuplicates(strArray))]) // Unique duplicates
+
+
+
+// 15 August medium question 
+// question 1
+// Array of Multiples
+// Create a function that takes two numbers as arguments (num, length) and returns an array of multiples of num until the array length reaches length.
+
+// function arrayOfMultiples(firstElement, lengthOfArray){
+//     let result = [];
+//     let incEle = 0;
+//     for (let i = 0; i < lengthOfArray; i++) {
+//         incEle += firstElement
+//         result.push(incEle)
+//     }
+//     console.log(result);
+// }
+
+// Examples
+// arrayOfMultiples(7, 5) 
+// ➞ [7, 14, 21, 28, 35]
+
+// arrayOfMultiples(12, 10) 
+// ➞ [12, 24, 36, 48, 60, 72, 84, 96, 108, 120]
+
+// arrayOfMultiples(17, 6) 
+// ➞ [17, 34, 51, 68, 85, 102]
+// Notes
+// Notice that num is also included in the returned array.
+
+
+// questin 2
+// Find the Second Largest Number
+// Create a function that takes an array of numbers and returns the second largest number.
+
+// let secondLargest = (arr) => {
+//     arr.sort((a,b)=>b-a)
+//     console.log(arr[1]);
+// }
+// Examples
+// secondLargest([10, 40, 30, 20, 50]) 
+// ➞ 40
+
+// secondLargest([25, 143, 89, 13, 105]) 
+// ➞ 105
+
+// secondLargest([54, 23, 11, 17, 10]) 
+// ➞ 23
+// Notes
+// There will be at least two numbers in the array.
+
+
+// question 3
+// Fix the Error: Value vs. Reference Types
+// Create a function that returns true if two arrays contain identical values, and false otherwise.
+
+// To solve this question, your friend writes the following code:
+
+// approach 1
+// function checkEquals(arr1, arr2) {
+//     for (let i = 0; i < arr1.length; i++) {
+//         if (arr1[i] !== arr2[i]) {
+//             return false
+//         }
+//     }
+//     // If all elements were same.
+//     return true
+// }
+
+// approach 2
+// or we can conver it into string
+// function checkEquals(arr1, arr2) {
+//     return arr1.toString() === arr2.toString()
+    // or use join()
+    // return arr1.join(",") === arr2.join(",")
+// }
+// approach 3
+// using every method
+// function checkEquals(arr1, arr2) {
+//     if(arr1.length !== arr2.length){
+//         return false
+//     }
+//     return arr1.every((val)=>arr2.includes(val))
+// }
+// But testing the code, you see that something is not quite right. Running the code yields the following results:
+
+// console.log(checkEquals([1, 2], [1, 3])
+// );
+// ➞ false
+// Good so far...
+
+// console.log(checkEquals([1, 2], [1, 2])
+// );
+// ➞ false
+// Yikes! What happened?
+// Rewrite your friend's code so that it correctly checks if two arrays are equal. To be equal, the arrays must have the same elements in the same order. The tests below should pass:
+
+// Examples
+// console.log(checkEquals([1, 2], [1, 3]));
+// ➞ false
+
+// console.log(checkEquals([1, 2], [1, 2]));
+// ➞ true
+
+// console.log(checkEquals([4, 5, 6], [4, 5, 6, 4]));
+// ➞ false
+
+// console.log(checkEquals([4, 7, 6], [4, 5, 6]));
+// ➞ false
+
+// console.log(checkEquals([4, 7, 6], [4, 6, 7]));
+// ➞ true
+// Notes
+// Hint: This has to do with value vs. reference types.
+
+
+// question 4
+// Fix the Error: Flattening an Array
+// I'm trying to write a function to flatten an array of subarrays into one array. (Suppose I am unware there is a .flat() method in the Array prototype). In other words, I want to transform this: [[1, 2], [3, 4]] into [1, 2, 3, 4].
+
+// Here is my code:
+
+// function flatten(arr) {
+//   arr2 = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = 0; j < arr[i].length; j++) {
+//         arr2.push(arr[i][j]);
+//     }
+//   }
+//   console.log(arr2);
+// }
+// But...it doesn't seem to be working! Fix my code so that it correctly flattens the array.
+
+// Examples
+// flatten([[1, 2], [3, 4]])
+//  ➞ []
+// Expected: [1, 2, 3, 4]
+
+// flatten([["a", "b"], ["c", "d"]])
+//  ➞ []
+// Expected: ["a", "b", "c", "d"]
+
+// flatten([[true, false], [false, false]])
+//  ➞ []
+// Expected: [true, false, false, false]
+
+
+// 

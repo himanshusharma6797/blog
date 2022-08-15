@@ -25,6 +25,9 @@ export default function Navbar() {
         <li>
         <NavLink className={"navbarLink"} style={({isActive})=>{return{backgroundColor: isActive?"black":"#5d626e"}}} to={"/filter"}>Filter</NavLink>
         </li>
+        <li>
+        <NavLink className={"navbarLink"} style={({isActive})=>{return{backgroundColor: isActive?"black":"#5d626e"}}} to={"/contact/"}>Contact</NavLink>
+        </li>
       </ul>
         {/* anchor tag */}
         {/* <h2>Anchor Tag</h2>
