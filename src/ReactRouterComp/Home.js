@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 export default function Home() {
   const navigate = useNavigate()
@@ -15,6 +15,10 @@ export default function Home() {
     // or we can use esy way to implemet this
     navigate(url)
   }
+  
+      // useLocation Hook
+      let location = useLocation();
+      console.log("useLocation Hook",location);
   return (
     <div>Home
       {/* for navigating programmatically */}

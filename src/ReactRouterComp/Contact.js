@@ -10,6 +10,7 @@ export default function Contact() {
         <Link to={'company'}>company</Link>
         <Link to={'other'}>other</Link>
         <Outlet/>
+        {/* because of <Outlet/> we can use neasted routing */}
     </div>
   )
 }

@@ -385,8 +385,8 @@
 // or we can conver it into string
 // function checkEquals(arr1, arr2) {
 //     return arr1.toString() === arr2.toString()
-    // or use join()
-    // return arr1.join(",") === arr2.join(",")
+// or use join()
+// return arr1.join(",") === arr2.join(",")
 // }
 // approach 3
 // using every method
@@ -459,4 +459,87 @@
 // Expected: [true, false, false, false]
 
 
-// 
+// 16 August
+// problem 1
+// Find the Bugs: Returning Valid Prices
+// There has been a masterdata issue which affected the prices of the products. Check if each product has a valid price (integer or float, and greater than or equal to zero). Products with a price of 0 are free and count as a valid price.
+
+// The return value should be a Boolean.
+// function hasValidPrice(obja) {
+//     // converting object into an array
+//     if (obja) {
+//         const propertyValues = Object.values(obja);
+//         if (propertyValues[1] >= 0 && (typeof propertyValues[1])==='number') {
+//             console.log(true);
+//         } else {
+//             console.log(false);
+//         }
+//     }else{
+//         console.log(false);
+//     }
+// }
+
+// // Examples
+// hasValidPrice({ "product": "Milk", price: 1.50 })
+// // ➞ true
+
+// hasValidPrice({ "product": "Cheese", price: -1 })
+// // ➞ false
+
+// hasValidPrice({ "product": "Eggs", price: 0 })
+// // ➞ true
+
+// hasValidPrice({ "product": "Cereals", price: "3.0" })
+// // ➞ false
+
+// hasValidPrice()
+// // ➞ false
+
+
+// problem 2
+// Clone an Array
+// The Code tab has a code which attempts to add a clone of an array to itself. There is no error message, but the results are not as expected. Can you fix the code?
+
+// function clone(arr){
+//     let newArr = arr
+//     console.log(newArr);
+//     newArr.push(arr.slice())
+//     console.log(newArr);
+
+//     // wrong way we will get this => <ref *1> [ 1, 1, [Circular *1], [ 1, 1, [Circular *1] ] ] so always use .slice it will get inserted proper element not making referance
+//     // newArr.push(arr)
+//     // console.log(arr);
+// }
+// // Examples
+// clone([1, 1]) 
+// // ➞ [1, 1, [1, 1]]
+
+// clone([1, 2, 3]) 
+// // ➞ [1, 2, 3, [1, 2, 3]]
+
+// clone(["x", "y"]) 
+// // ➞ ["x", "y", ["x", "y"]]
+
+
+// problem 3
+// Modular Arithmetic (Part #1)
+// Modify the inefficient code in the Code tab so it can pass the tests.
+// let mod = (base, exp, k) => {
+//     console.log((base**(2**exp)) % k);
+// } 
+
+// // Examples
+// // mod(base, exp, k) 
+// // ➞ (base**(2**exp)) % k
+
+// mod(10, 1, 99 ) 
+// // ➞ 1
+
+// mod(3, 2, 15 ) 
+// // ➞ 6
+
+// mod(123, 20, 1234 ) 
+// ➞ 391
+// Notes
+// Try using loops.
+

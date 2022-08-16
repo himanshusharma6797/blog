@@ -43,6 +43,8 @@ import Contact from './ReactRouterComp/Contact';
 import Company from './ReactRouterComp/AdditionalComponents/Company';
 import Channel from './ReactRouterComp/AdditionalComponents/Channel';
 import Other from './ReactRouterComp/AdditionalComponents/Other';
+import Login from './ReactRouterComp/Login';
+import ProtectedRoute from './ReactRouterComp/ProtectedRoute';
 // import Page404 from './ReactRouterComp/Page404';
 // or
 // import {Button} from 'react-bootstrap';
@@ -112,16 +114,18 @@ function App() {
       <BrowserRouter>
         <Navbar/>
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/home' element={<Home />} />
-          <Route path='/about' element={<About />} />
+          <Route path='/' element={<ProtectedRoute Component={Home} />} />
+          <Route path='/home' element={<ProtectedRoute Component={Home} />} />
+          {/* route for login */}
+          <Route path='/login' element={<Login />} />
+          <Route path='/about' element={<ProtectedRoute Component={About} />} />
           {/* <Route path='/*' element={<Page404/>}/> */}
           {/* if we enter wrong url that does not matched with path of routes then we set path="/*" so it will open default when no path are matched or we can say enter wrong url */}
           <Route path='/*' element={<Navigate to={"/"}/>}/>
           {/* for directly re-direct page if we enter wrong url */}
           <Route path='/user/:naam' element={<ParamsUsers />}/>
           {/* for understanding for the router that it is the name of user */}
-          <Route path='/filter' element={<SearchParamsHookFilter />}/>
+          <Route path='/filter' element={<ProtectedRoute Component={SearchParamsHookFilter} />}/>
           <Route path='/contact/' element={<Contact/>}>
             {/* don't define prallel routes for neasted routing define inside an route */}
             <Route path='company' element={<Company/>}/>
