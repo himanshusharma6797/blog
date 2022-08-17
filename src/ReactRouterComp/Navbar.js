@@ -28,6 +28,10 @@ export default function Navbar() {
         <li>
         <NavLink className={"navbarLink"} style={({isActive})=>{return{backgroundColor: isActive?"black":"#5d626e"}}} to={"/contact/"}>Contact</NavLink>
         </li>
+        {/* for api's */}
+        <li>
+        <NavLink className={"navbarLink"} style={({isActive})=>{return{backgroundColor: isActive?"black":"#5d626e"}}} to={"/api's"}>API's</NavLink>
+        </li>
         <li>
         <NavLink className={"navbarLink"} style={({isActive})=>{return{backgroundColor: isActive?"black":"#5d626e"}}} to={"/login"}>Login</NavLink>
         </li>
