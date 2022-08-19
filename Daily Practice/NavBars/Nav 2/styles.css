@@ -23,6 +23,7 @@ li, a, button{
 .logo{
     cursor: pointer;
     order: 3;
+    /* we use oder to set the sequence */
     margin-left: auto;
 }
 nav{

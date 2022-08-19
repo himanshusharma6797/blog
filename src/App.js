@@ -121,6 +121,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/about' element={<ProtectedRoute Component={About} />} />
           <Route path="/api's" element={<ProtectedRoute Component={GetMethod} />} />
+          <Route path="/api's" element={<ProtectedRoute Component={GetMethod} />} />
           {/* <Route path='/*' element={<Page404/>}/> */}
           {/* if we enter wrong url that does not matched with path of routes then we set path="/*" so it will open default when no path are matched or we can say enter wrong url */}
           <Route path='/*' element={<Navigate to={"/"}/>}/>
