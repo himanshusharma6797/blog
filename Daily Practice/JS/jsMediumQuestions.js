@@ -543,3 +543,65 @@
 // Notes
 // Try using loops.
 
+
+// august 23
+
+// question 1
+// Length of a Nested Array
+// The .length property on an array will return the number of elements in the array. For example, the array below contains 2 elements:
+
+// [1, [2, 3]]
+// // 2 elements, number 1 and array [2, 3]
+// Suppose we instead wanted to know the total number of non-nested items in the nested array. In the above case, [1, [2, 3]] contains 3 non-nested items, 1, 2 and 3.
+
+// Write a function that returns the total number of non-nested items in a nested array.
+
+// function getLength(array) {
+//     let joinArr = array.join()
+//     // default join by ","
+//     console.log('joinArr',joinArr);
+//     let splitArr = joinArr.split(',')
+//     console.log('splitArr',splitArr);
+//     let len = splitArr.length
+//     console.log('length',len);
+// }
+
+// // Examples
+// getLength([1, [2, 3]]) 
+// // ➞ 3
+
+// getLength([1, [2, [3, 4]]]) 
+// // ➞ 4
+
+// getLength([1, [2, [3, [4, [5, 6]]]]]) 
+// // ➞ 6
+
+// getLength([1, [2], 1, [2], 1])
+//  ➞ 5
+// Notes
+// An empty array should return 0.
+
+// question 2
+// An array is special if every even index contains an even number and every odd index contains an odd number. Create a function that returns true if an array is special, and false otherwise.
+
+
+// function isSpecialArray(array){
+//     for (const i in array) {
+//         // console.log(`iterate is ${i} and array[i] ${array[i]}`);
+//         if (array[i] % 2 !== i % 2) return false
+//     }
+//     return true
+// }
+
+// // Examples
+// console.log(isSpecialArray([2, 7, 4, 9, 6, 1, 6, 3]));
+// //  ➞ true
+// // // Even indices: [2, 4, 6, 6]; Odd indices: [7, 9, 1, 3]
+
+// console.log(isSpecialArray([2, 7, 9, 1, 6, 1, 6, 3]) );
+// // ➞ false
+// // // Index 2 has an odd number 9.
+
+// console.log(isSpecialArray([2, 7, 8, 8, 6, 1, 6, 3]));
+// ➞ false
+// Index 3 has an even number 8.

@@ -50,8 +50,8 @@ function compareInDescendingOrder(a,b){
 }
 // modify the orignal array
 // taking compare function
-console.log(a1.sort(compareInAscendingOrder));
-console.log(a2.sort(compareInDescendingOrder));
+console.log("Sorting Ascending Wise",a1.sort((a,b)=>a-b));
+console.log("Sorting Descending Wise",a2.sort(compareInDescendingOrder));
 
 
 // slice

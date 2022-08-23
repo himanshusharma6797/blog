@@ -7,6 +7,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* font-size: 16px; */
+    /* this is for root element but here is the root element is html or :root */
 }
 a{
     text-decoration: none;
@@ -57,6 +59,8 @@ header{
     font-size: 7vmin;
     margin-top: 3.13rem;
     margin-bottom: 1.88rem;
+    padding: 1rem;
+    border: 0.125rem solid black;
 }
 .ctn{
     padding: 1rem 2rem;
@@ -64,3 +68,9 @@ header{
     border-radius: 1.88rem;
     color: whitesmoke;
 }
+
+/* pseudo element */
+/* .logo::after{
+    content: "Him The King";
+    background-color: black;
+} */

@@ -81,11 +81,12 @@
 
 // var a = ['ap', 'ban', 'coc']
 // var b = a;
-// var c = a.slice()
-// a.push('date')
+// var c = a.slice(1)
+// // a.push('date')
 
-// console.log(b);
-// console.log(c);
+// // console.log(b);
+// console.log("c",c);
+// console.log("a",a);
 
 
 // var counter = (function(){
@@ -116,8 +117,8 @@
 // console.log(counter.value());
 
 
-(function setup(){
-    function handleClick(){
-        alert("Clicked");
-    }
-})()
+// (function setup(){
+//     function handleClick(){
+//         alert("Clicked");
+//     }
+// })()
