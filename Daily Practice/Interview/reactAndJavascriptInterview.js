@@ -105,6 +105,20 @@
 // console.log(b);
 // console.log(c);
 
+
+// neasted destructuring
+// let arrOfObjs=[
+//     {name:'harshu',age:25},
+//     {name:'charshu',age:5},
+//     {name:'tarshu',age:15},
+//     {name:'garshu',age:35},
+// ]
+
+// let [{name:meraName},,,{age}]=arrOfObjs;
+// // we can change the variable name for object by {name:meraName}
+// console.log(obja1);
+
+
 // Callbacks
 // const userLeft = false;
 // const userWatchingCatMeme = false;
@@ -204,3 +218,12 @@
 // console.log(add());
 // console.log(add());
 // console.log(add());
+
+// function expression is to same function as an variable
+let functionExpression = function(){
+    console.log("this is function expression");
+}
+functionExpression()
+
+
+// if we want to return in arrow function then it will be esily by the one line of code we dont need to write the return it will use for multiple line of code for the function.

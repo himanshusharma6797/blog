@@ -605,3 +605,30 @@
 // console.log(isSpecialArray([2, 7, 8, 8, 6, 1, 6, 3]));
 // ➞ false
 // Index 3 has an even number 8.
+
+
+// 24 august 
+// question 1
+// Index Multiplier
+// Return the sum of all items in an array, where each item is multiplied by its index (zero-based). For empty arrays, return 0.
+
+// function indexMultiplier(array){
+//     let multipleIndexArray = array.map((val,index)=>{
+//         return val*index
+//     })
+//     let newArray = multipleIndexArray.reduce((preVal,currVal,index)=>{
+//         return preVal+currVal
+//     })
+//     console.log(newArray);
+// }
+
+// // Examples
+// indexMultiplier([1, 2, 3, 4, 5]) 
+// // ➞ 40
+// // // (1*0 + 2*1 + 3*2 + 4*3 + 5*4)
+
+// indexMultiplier([-3, 0, 8, -6]) 
+// ➞ -2
+// // (-3*0 + 0*1 + 8*2 + -6*3)
+// Notes
+// All items in the array will be integers.
