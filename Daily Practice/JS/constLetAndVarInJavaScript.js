@@ -1,5 +1,5 @@
 var b = 'var globally';
-{
+function varr(){
     var b = 'var block';
     console.log(b);
 }
@@ -14,3 +14,24 @@ let a = 'let globally';
     // the "let blocked" will only be execute in the block because let is a block
 }
 console.log(a);
+
+
+
+// var
+// var xyz = 'king'
+{
+    var xyz = 'him'
+}
+console.log(xyz);
+{
+    console.log(xyz);
+}
+
+function nameee() {
+    if (true) {
+        var avar = 'aavar'
+    }
+    console.log(avar);
+}
+nameee()
+// console.log(avar);

@@ -46,6 +46,9 @@ import Other from './ReactRouterComp/AdditionalComponents/Other';
 import Login from './ReactRouterComp/Login';
 import ProtectedRoute from './ReactRouterComp/ProtectedRoute';
 import GetMethod from './API/GetMethod';
+import PreviousState from './PreviousState/PreviousState';
+import PreviousProps from './PreviousProps/PreviousProps';
+import StateWithObject from './StateWithObject/StateWithObject';
 // import Page404 from './ReactRouterComp/Page404';
 // or
 // import {Button} from 'react-bootstrap';
@@ -104,6 +107,14 @@ function App() {
     myRef.current.focus();
     myRef.current.style.color = "White";
     myRef.current.style.backgroundColor = "Black";
+  }
+
+  // Previous Props
+  const [countProp, setCountProp] = useState(0)
+
+  let updateCounter = () =>{
+    let random = Math.round(Math.random()*10)
+    setCountProp(random)
   }
 
 
@@ -263,6 +274,18 @@ function App() {
       <h1>HOC</h1>
       <HOFRed comp={Counter} />
       <HOFGreen comp={Counter} />
+
+      {/* Previous state */}
+      <PreviousState/>
+
+      {/* Previous Props */}
+      <div>
+      <PreviousProps myCount={countProp} />
+      <button onClick={updateCounter}>Click Me For Previous Props</button>
+      </div>
+
+      {/* State With Object */}
+      <StateWithObject/>
 
     </div>
   );

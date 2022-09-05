@@ -1,7 +1,7 @@
 import React,{PureComponent} from 'react'
 import PureComponentInProps from './PureComponentInProps';
 export default class PureComponentInState extends PureComponent{
-    // by the nuse of PureComponent we can stop the re-render if the state is same 
+    // by the use of PureComponent we can stop the re-render if the state is same 
     constructor(){
         super();
         this.state={
