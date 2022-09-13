@@ -4,6 +4,10 @@ let anUpdatedArray = anArr.splice(1,3,22,33,44)
 console.log(anUpdatedArray);
 console.log(anArr);
 
+// for checking it is array or not then
+console.log(Array.isArray(anArr));
+console.log(Array.isArray(anUpdatedArray));
+
 // array are mutable arrays can be change
 // console.log(typeof anArr);
 // type of array is also an object in javascript

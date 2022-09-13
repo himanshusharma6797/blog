@@ -1,0 +1,18 @@
+Comparing Redux & Context API
+
+Context API	
+> Built-in tool that ships with React	
+> Requires minimal Setup	
+> Specifically designed for static data, that is not often refreshed or updated	
+> Adding new contexts requires creation from scratch	
+> Debugging can be hard in highly nested React Component Structure even with Dev Tool	
+> UI logic and State Management Logic are in the same component	
+
+
+Redux
+> Additional installation Required, driving up the final bundle size
+> Requires extensive setup to integrate it with a React Application
+> Works like a charm with both static and dynamic data
+> Easily extendible due to the ease of adding new data/actions after the initial setup
+> Incredibly powerful Redux Dev Tools to ease debugging
+> Better code organization with separate UI logic and State Management Logic

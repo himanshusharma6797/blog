@@ -1,22 +1,38 @@
 import React, { useEffect, useState } from 'react'
 
 export default function UseEffect(props) {
-    const [count, setCount]=useState(0);
-    const [countTwo, setCountTwo]=useState(0);
-    const [countThree, setCountThree]=useState(0);
-    // const [countFour, setCountFour]=useState(0);
-    // const [countFive, setCountFive]=useState(0);
+    const [count, setCount] = useState(0);
+    const [countTwo, setCountTwo] = useState(0);
+    const [countThree, setCountThree] = useState(0);
+    useEffect(() => {
+        console.log('This useEffect is working as an mount the component');
+        return () => {
+            console.log('The returnin this useEffect will unMount the component');
+        }
+    }, [])
+
     // If you’re familiar with React class lifecycle methods, you can think of useEffect Hook as componentDidMount, componentDidUpdate, and componentWillUnmount combined.
-    useEffect(()=>{
+    useEffect(() => {
         console.log("useEffect count one");
-    },[count,countTwo])
+        return () => {
+            console.log("useEffect count one Unmount")
+        }
+    }, [count, countTwo])
     // we can use multiple state in this useEffect second parameter array
-    useEffect(()=>{
+    useEffect(() => {
         console.log("useEffect count two");
-    },[countTwo])
-    useEffect(()=>{
+        // return will help to unmount the component
+        return () => {
+            console.log("useEffect count two Unmount")
+        }
+    }, [countTwo])
+    useEffect(() => {
         console.log("useEffect count three");
-    },[countThree])
+        // return will help to unmount the component
+        return () => {
+            console.log("useEffect count three Unmount")
+        }
+    }, [countThree])
     // this will update only for the state name which we are used in the array
     // and we can use more then one useState 
 
@@ -34,26 +50,32 @@ export default function UseEffect(props) {
     //     useEffectCallFunction();
     // })
 
-    useEffect(()=>{
+    useEffect(() => {
         console.log("useEffect props counter");
-    },[props.counttter])
-    useEffect(()=>{
+        return () => {
+            console.log("useEffect props counter Unmount")
+        }
+    }, [props.counttter])
+    useEffect(() => {
         console.log("useEffect props datater");
-    },[props.datta])
+        return () => {
+            console.log("useEffect props datater Unmount")
+        }
+    }, [props.datta])
 
-  return (
-    <div>
-    {/* <button onClick={()=>functionCallUseEffect()}>Function Call useEffect</button> */}
+    return (
+        <div>
+            {/* <button onClick={()=>functionCallUseEffect()}>Function Call useEffect</button> */}
 
-        useEffect for state {count}
-    <button onClick={()=>setCount(count+1)}>Counter Update</button>
-        useEffect for state {countTwo}
-    <button onClick={()=>setCountTwo(countTwo+1)}>Counter Update</button>
-        useEffect for state {countThree}
-    <button onClick={()=>setCountThree(countThree+1)}>Counter Update</button>
+            useEffect for state {count}
+            <button onClick={() => setCount(count + 1)}>Counter Update</button>
+            useEffect for state {countTwo}
+            <button onClick={() => setCountTwo(countTwo + 1)}>Counter Update</button>
+            useEffect for state {countThree}
+            <button onClick={() => setCountThree(countThree + 1)}>Counter Update</button>
 
-        useEffect for props count {props.counttter}
-        useEffect for props data {props.datta}
-    </div>
-  )
+            useEffect for props count {props.counttter}
+            useEffect for props data {props.datta}
+        </div>
+    )
 }

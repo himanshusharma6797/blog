@@ -4,7 +4,7 @@ import ClassComponents from './ClassComponents/ClassComponents'
 import { ComponentWithoutJSX } from './ComponentWithoutJSX/ComponentWithoutJSX.js'
 import UseState from './UseState/UseState';
 import PropsInFC from './PropsInFC/PropsInFC';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import InputBoxValue from './InputBoxValue/InputBoxValue';
 import Forms from './Forms/Forms';
 import ConditionalRenderingIfCondition from './ConditionalRendreingIfCondition/ConditionalRenderingIfCondition';
@@ -49,6 +49,11 @@ import GetMethod from './API/GetMethod';
 import PreviousState from './PreviousState/PreviousState';
 import PreviousProps from './PreviousProps/PreviousProps';
 import StateWithObject from './StateWithObject/StateWithObject';
+import NoteState from './Context/notes/NoteState';
+import PropsfromChildToParent from './PropsFromChildToParent/PropsfromChildToParent';
+import HomeContainer from './containers/HomeContainer'
+import HeaderContainer from './containers/HeaderContainer';
+// import NeastedComponent from './NeastedComponents/NeastedComponent';
 // import Page404 from './ReactRouterComp/Page404';
 // or
 // import {Button} from 'react-bootstrap';
@@ -118,11 +123,32 @@ function App() {
   }
 
 
+  // sending data to neasted component
+  // let namee ='Himasso';
+  // const [dataOne, setDataOne]=useState({})
+  // let gettingDataFromGrandChild = (datta) => {
+  //   setDataOne(datta)
+  // }
+
+
+  // passing props from child to parent
+  const [dataProp, setDataProp] = useState({
+    name:'Harshu The Great',
+    age:'Pacchish'
+  })
+  useEffect(() => {
+    console.log('passing props from child to parent is render')
+  }, [dataProp])
+  
+
   return (
     <div>
 
       {/* React Router */}
       {/* Link */}
+      {/* here we using context api */}
+      <NoteState>
+
       <BrowserRouter>
         <Navbar/>
         <Routes>
@@ -149,6 +175,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      </NoteState>
 
       <h1>
         Hello {myNAme}
@@ -287,6 +314,23 @@ function App() {
       {/* State With Object */}
       <StateWithObject/>
 
+
+      {/* neasted component getting data and sending data */}
+      {/* <NeastedComponent data={namee} getData={gettingDataFromGrandChild}/>
+      <h2>Lifting Up State Name: {dataOne.name}</h2>
+      <h2>Lifting Up State Age: {dataOne.age}</h2> */}
+
+      {/* passing props from child to parent */}
+      <div>
+      <h1>Naam: {dataProp.name}</h1>
+      <h2>Umar: {dataProp.age}</h2>
+      <PropsfromChildToParent setDataProps={dataProp =>setDataProp(dataProp)}/>
+      </div>
+
+
+      {/* Redux */}
+      <HeaderContainer/>
+      <HomeContainer/>
     </div>
   );
 }
