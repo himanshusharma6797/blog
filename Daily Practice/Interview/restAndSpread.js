@@ -10,7 +10,7 @@ abc(ab)
 abc(...ab)
 
 
-// this is rest operator we passing throw as an declation parameter
+// this is rest operator we passing throw as an declaration parameter
 function restOp(...args) {
     // rest os help to bunch them
     console.log(args);

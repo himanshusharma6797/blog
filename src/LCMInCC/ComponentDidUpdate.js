@@ -13,7 +13,9 @@ export default class ComponentDidUpdate extends Component {
     // previous means after updating the state and props we can see what is the value now is ther is any change or not
     componentDidUpdate(preProps, preState, snapshot){
         // it will run when we update the states and props
-        console.log("ComonentDidUpdate",preState.myName, this.state.myName);
+        console.log("ComonentDidUpdate preState",preState, this.state.myName);
+        console.log("ComonentDidUpdate preProps",preProps, this.state.myName);
+        console.log("ComonentDidUpdate snapshot",snapshot, this.state.myName);
         if (preState.myName===this.state.myName) {
             // alert("Data is matched");
             console.log("Data is matched");

@@ -188,6 +188,8 @@
 //     console.log(error.name + " "+ error.message);
 // });
 
+
+
 // Rest
 // function restOperator(...rest){
 //     let a = 0;
@@ -198,6 +200,9 @@
 // }
 
 // restOperator(1,2,3,4,5,6,7,8,9);
+
+
+
 
 // this refers the lexical
 // var a = 10;

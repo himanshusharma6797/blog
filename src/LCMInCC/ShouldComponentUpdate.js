@@ -9,9 +9,9 @@ export default class ShouldComponentUpdate extends Component {
     }
     // this function will stop to re-rendering on update
     shouldComponentUpdate(){
-        console.log("shouldComponentUpdate",this.state.count);
-        // this will run if this conditon is true
-        if (this.state.count<5) {
+      // this will run if this conditon is true
+      if (this.state.count<5) {
+          console.log("shouldComponentUpdate",this.state.count);
             return true
         }
         else{
