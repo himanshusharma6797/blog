@@ -435,7 +435,7 @@
 // Here is my code:
 
 // function flatten(arr) {
-//   arr2 = [];
+//   let arr2 = [];
 //   for (let i = 0; i < arr.length; i++) {
 //     for (let j = 0; j < arr[i].length; j++) {
 //         arr2.push(arr[i][j]);
@@ -455,6 +455,84 @@
 // Expected: ["a", "b", "c", "d"]
 
 // flatten([[true, false], [false, false]])
+//  ➞ []
+// Expected: [true, false, false, false]
+
+
+// example 2
+
+function flatten(array) {
+    // create a brand new blank array
+    let arr = [];
+
+    // create a helper function with array argument
+    function helper(array) {
+        // write a for loop
+        for (let i = 0; i < array.length; i++) {
+            // if element is array, recurse with helper function
+            if (Array.isArray(array[i])) {
+                return helper(array[i])
+                // else, push single value into the new array
+            } else {
+                arr.push(array[i]);
+            }
+        }
+    }
+    helper(array)
+    // return the array 
+    return arr
+}
+
+// without helper function
+// create a brand new blank array
+// let arr2 = [];
+// function flatten2(array) {
+//     // write a for loop
+//     for (let i = 0; i < array.length; i++) {
+//         // if element is array, recurse
+//         if (Array.isArray(array[i])) {
+//             return flatten2(array[i])
+//             // else, push single value into the new array
+//         } else {
+//             arr2.push(array[i]);
+//         }
+//     }
+//     // return the array 
+//     return arr2
+// }
+
+
+// // let someNewArrray
+// function flatten(array) {
+//     // we can achiev this by reduce method
+//     someNewArrray = array.reduce((acc, item)=>{
+//         // if item is array
+//         // or if item is an number
+//         if(Array.isArray(item)){
+//             acc = acc.concat(flatten(item))
+//         }
+//         else{
+//             acc.push(item)
+//             // or
+//             acc = [...acc, item]
+//         }
+//         return acc
+//     },[])
+//     // here we take second arrgument as empty array that is an accumilatore
+//     return someNewArrray
+// }
+
+console.log(flatten([1, [2, 3, [4, 5, [6]]]]));
+
+console.log(flatten([[1, 2], [3, 4, [5, 6]]]));
+//  ➞ []
+// Expected: [1, 2, 3, 4, 5, 6]
+
+console.log(flatten([["a", "b"], ["c", "d"]]));
+//  ➞ []
+// Expected: ["a", "b", "c", "d"]
+
+console.log(flatten2([[true, false], [false, false]]));
 //  ➞ []
 // Expected: [true, false, false, false]
 
@@ -511,13 +589,13 @@
 //     // console.log(arr);
 // }
 // // Examples
-// clone([1, 1]) 
+// clone([1, 1])
 // // ➞ [1, 1, [1, 1]]
 
-// clone([1, 2, 3]) 
+// clone([1, 2, 3])
 // // ➞ [1, 2, 3, [1, 2, 3]]
 
-// clone(["x", "y"]) 
+// clone(["x", "y"])
 // // ➞ ["x", "y", ["x", "y"]]
 
 
@@ -526,19 +604,19 @@
 // Modify the inefficient code in the Code tab so it can pass the tests.
 // let mod = (base, exp, k) => {
 //     console.log((base**(2**exp)) % k);
-// } 
+// }
 
 // // Examples
-// // mod(base, exp, k) 
+// // mod(base, exp, k)
 // // ➞ (base**(2**exp)) % k
 
-// mod(10, 1, 99 ) 
+// mod(10, 1, 99 )
 // // ➞ 1
 
-// mod(3, 2, 15 ) 
+// mod(3, 2, 15 )
 // // ➞ 6
 
-// mod(123, 20, 1234 ) 
+// mod(123, 20, 1234 )
 // ➞ 391
 // Notes
 // Try using loops.
@@ -567,13 +645,13 @@
 // }
 
 // // Examples
-// getLength([1, [2, 3]]) 
+// getLength([1, [2, 3]])
 // // ➞ 3
 
-// getLength([1, [2, [3, 4]]]) 
+// getLength([1, [2, [3, 4]]])
 // // ➞ 4
 
-// getLength([1, [2, [3, [4, [5, 6]]]]]) 
+// getLength([1, [2, [3, [4, [5, 6]]]]])
 // // ➞ 6
 
 // getLength([1, [2], 1, [2], 1])
@@ -607,7 +685,7 @@
 // Index 3 has an even number 8.
 
 
-// 24 august 
+// 24 august
 // question 1
 // Index Multiplier
 // Return the sum of all items in an array, where each item is multiplied by its index (zero-based). For empty arrays, return 0.
@@ -623,11 +701,11 @@
 // }
 
 // // Examples
-// indexMultiplier([1, 2, 3, 4, 5]) 
+// indexMultiplier([1, 2, 3, 4, 5])
 // // ➞ 40
 // // // (1*0 + 2*1 + 3*2 + 4*3 + 5*4)
 
-// indexMultiplier([-3, 0, 8, -6]) 
+// indexMultiplier([-3, 0, 8, -6])
 // ➞ -2
 // // (-3*0 + 0*1 + 8*2 + -6*3)
 // Notes

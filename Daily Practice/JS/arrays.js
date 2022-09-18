@@ -1,12 +1,12 @@
 // splice
-let anArr =['1','2','3','4','5','7'];
-let anUpdatedArray = anArr.splice(1,3,22,33,44)
-console.log(anUpdatedArray);
-console.log(anArr);
+// let anArr =['1','2','3','4','5','7'];
+// let anUpdatedArray = anArr.splice(2,3,33,44,55)
+// console.log('anUpdatedArray',anUpdatedArray);
+// console.log('anArr',anArr);
 
 // for checking it is array or not then
-console.log(Array.isArray(anArr));
-console.log(Array.isArray(anUpdatedArray));
+// console.log(Array.isArray(anArr));
+// console.log(Array.isArray(anUpdatedArray));
 
 // array are mutable arrays can be change
 // console.log(typeof anArr);
@@ -46,6 +46,8 @@ console.log(Array.isArray(anUpdatedArray));
 // making array of the string
 // let anArrr = "Himanshu"
 // let arr = Array.from(anArrr);
+// or
+// let arr = anArrr.split('')
 // console.log(arr);
 
 // for(let i of arr){
@@ -57,7 +59,7 @@ console.log(Array.isArray(anUpdatedArray));
 // }
 
 // map
-// map returns a new array but forEach does not reurning the new array
+// map returns a new array but forEach returning undefine
 // return is necessory in the map otherwise it will return the undefine
 // const newArr =['1','2','3','4','5','7'];
 // newArr.map((ele,ind,arrStr)=>
@@ -97,12 +99,13 @@ console.log(Array.isArray(anUpdatedArray));
 //         console.log("current value",curr.price);
 //         return pre.price + curr.price
 // },0)
-// // we can set the previous value by the second argumnet what we want to set 
+// // we can set the previous value by the second argumnet what we want to set from the start otherwise it takes first element of the array
 // console.log(totalPrice);
 
 // object inside an array
 // let ar = [a={him:"king",brim:"chamundaye"},b={himmy:"kingy",brimy:"chamunday"}]
 // console.log("object inside an array",ar[0].him);
+// console.log("object inside an array",ar.indexOf(b));
 // let arrrrrr = [{him:"king",brim:"chamundaye"},{himmy:"kingy",brimy:"chamunday"}]
 // console.log("object inside an array 2",ar[0].him);
 

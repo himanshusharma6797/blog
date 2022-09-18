@@ -9,8 +9,6 @@ export default function About() {
     a.update();
     // eslint-disable-next-line
   }, [])
-  
-
   return (
     <div>
       About

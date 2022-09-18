@@ -1,4 +1,5 @@
 // const txt = '{"name":"John", "age":30, "city":"New York"}'
+// deepcopy of object
 // const obj = JSON.parse(JSON.stringify(txt)); 
 // // const obj = JSON.parse(txt); 
 // // const obj = JSON.(txt); 
@@ -81,12 +82,13 @@
 
 // var a = ['ap', 'ban', 'coc']
 // var b = a;
-// var c = a.slice(1)
-// // a.push('date')
+// var c = a.slice()
+// let b = a.push('date')
 
 // // console.log(b);
 // console.log("c",c);
 // console.log("a",a);
+// console.log("b",b);
 
 
 // var counter = (function(){

@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 
 function FrowardRef(props,refs) {
-    // we can use ref from parant component to child by the secons parameter of the functional component not props, that is ref
+    // we can use ref from parant component to child by the second parameter of the functional component not props, that is ref
   return (
     <div>
         FrowardRef

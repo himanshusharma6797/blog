@@ -117,8 +117,8 @@ function App() {
   // Previous Props
   const [countProp, setCountProp] = useState(0)
 
-  let updateCounter = () =>{
-    let random = Math.round(Math.random()*10)
+  let updateCounter = () => {
+    let random = Math.round(Math.random() * 10)
     setCountProp(random)
   }
 
@@ -133,13 +133,13 @@ function App() {
 
   // passing props from child to parent
   const [dataProp, setDataProp] = useState({
-    name:'Harshu The Great',
-    age:'Pacchish'
+    name: 'Harshu The Great',
+    age: 'Pacchish'
   })
   useEffect(() => {
     console.log('passing props from child to parent is render')
   }, [dataProp])
-  
+
 
   return (
     <div>
@@ -149,32 +149,32 @@ function App() {
       {/* here we using context api */}
       <NoteState>
 
-      <BrowserRouter>
-        <Navbar/>
-        <Routes>
-          <Route path='/' element={<ProtectedRoute Component={Home} />} />
-          <Route path='/home' element={<ProtectedRoute Component={Home} />} />
-          {/* route for login */}
-          <Route path='/login' element={<Login />} />
-          <Route path='/about' element={<ProtectedRoute Component={About} />} />
-          <Route path="/api's" element={<ProtectedRoute Component={GetMethod} />} />
-          <Route path="/api's" element={<ProtectedRoute Component={GetMethod} />} />
-          {/* <Route path='/*' element={<Page404/>}/> */}
-          {/* if we enter wrong url that does not matched with path of routes then we set path="/*" so it will open default when no path are matched or we can say enter wrong url */}
-          <Route path='/*' element={<Navigate to={"/"}/>}/>
-          {/* for directly re-direct page if we enter wrong url */}
-          <Route path='/user/:naam' element={<ParamsUsers />}/>
-          {/* for understanding for the router that it is the name of user */}
-          <Route path='/filter' element={<ProtectedRoute Component={SearchParamsHookFilter} />}/>
-          <Route path='/contact/' element={<Contact/>}>
-            {/* don't define prallel routes for neasted routing define inside an route */}
-            <Route path='company' element={<Company/>}/>
-            <Route path='channel' element={<Channel/>}/>
-            <Route path='other' element={<Other/>}/>
-            {/* if we use slash inner routs then get this error =>Absolute route path "/other" nested under path "/contact/" is not valid. An absolute child route path must start with the combined path of all its parent routes. */}
-          </Route>
-        </Routes>
-      </BrowserRouter>
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path='/' element={<ProtectedRoute Component={Home} />} />
+            <Route path='/home' element={<ProtectedRoute Component={Home} />} />
+            {/* route for login */}
+            <Route path='/login' element={<Login />} />
+            <Route path='/about' element={<ProtectedRoute Component={About} />} />
+            <Route path="/api's" element={<ProtectedRoute Component={GetMethod} />} />
+            <Route path="/api's" element={<ProtectedRoute Component={GetMethod} />} />
+            {/* <Route path='/*' element={<Page404/>}/> */}
+            {/* if we enter wrong url that does not matched with path of routes then we set path="/*" so it will open default when no path are matched or we can say enter wrong url */}
+            <Route path='/*' element={<Navigate to={"/"} />} />
+            {/* for directly re-direct page if we enter wrong url */}
+            <Route path='/user/:naam' element={<ProtectedRoute Component={ParamsUsers} />} />
+            {/* for understanding for the router that it is the name of user */}
+            <Route path='/filter' element={<ProtectedRoute Component={SearchParamsHookFilter} />} />
+            <Route path='/contact/' element={<Contact />}>
+              {/* don't define prallel routes for neasted routing define inside an route */}
+              <Route path='company' element={<Company />} />
+              <Route path='channel' element={<Channel />} />
+              <Route path='other' element={<Other />} />
+              {/* if we use slash inner routs then get this error =>Absolute route path "/other" nested under path "/contact/" is not valid. An absolute child route path must start with the combined path of all its parent routes. */}
+            </Route>
+          </Routes>
+        </BrowserRouter>
       </NoteState>
 
       <h1>
@@ -297,22 +297,18 @@ function App() {
       {/* Uncontrolled Component */}
       <UncontrolledComponentInFC />
 
-      {/* Higher Order Function */}
-      <h1>HOC</h1>
-      <HOFRed comp={Counter} />
-      <HOFGreen comp={Counter} />
 
       {/* Previous state */}
-      <PreviousState/>
+      <PreviousState />
 
       {/* Previous Props */}
       <div>
-      <PreviousProps myCount={countProp} />
-      <button onClick={updateCounter}>Click Me For Previous Props</button>
+        <PreviousProps myCount={countProp} />
+        <button onClick={updateCounter}>Click Me For Previous Props</button>
       </div>
 
       {/* State With Object */}
-      <StateWithObject/>
+      <StateWithObject />
 
 
       {/* neasted component getting data and sending data */}
@@ -322,15 +318,20 @@ function App() {
 
       {/* passing props from child to parent */}
       <div>
-      <h1>Naam: {dataProp.name}</h1>
-      <h2>Umar: {dataProp.age}</h2>
-      <PropsfromChildToParent setDataProps={dataProp =>setDataProp(dataProp)}/>
+        <h1>Naam: {dataProp.name}</h1>
+        <h2>Umar: {dataProp.age}</h2>
+        <PropsfromChildToParent setDataProps={dataProp => setDataProp(dataProp)} />
       </div>
 
 
       {/* Redux */}
-      <HeaderContainer/>
-      <HomeContainer/>
+      <HeaderContainer />
+      <HomeContainer />
+      
+      {/* Higher Order Function */}
+      <h1>HOC</h1>
+      <HOFRed comp={Counter} />
+      <HOFGreen comp={Counter} />
     </div>
   );
 }

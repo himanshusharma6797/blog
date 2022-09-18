@@ -5,7 +5,7 @@ export default function ParamsUsers() {
     const params = useParams();
     const {naam} = params;
     // the object key must be same as in route 
-    console.log(params);
+    console.log('params',params);
 
     // useLocation Hook => This hook returns the location object used by the react-router. This object represents the current URL and is immutable. Whenever the URL changes, the useLocation() hook returns a newly updated location object.
     let location = useLocation();

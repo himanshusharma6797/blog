@@ -3,6 +3,7 @@ import { Table } from 'react-bootstrap';
 
 
 export default function GetMethod() {
+    
     // when we work with API's take useState as an array
     const [data, setData] = useState([])
 
